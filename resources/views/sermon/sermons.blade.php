@@ -1,0 +1,94 @@
+<!-- church template -->
+<!-- authored by Boaz James Otieno -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church</title>
+
+    <!-- image slider css -->
+    <link rel="stylesheet" type="text/css" href="css/image-slider.css">
+
+    <!-- font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- animate -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+
+    <!-- countdown css -->
+    <link rel="stylesheet" type="text/css" href="css/countdown.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+
+<!-- navigation -->
+@include('includes.sermons-nav')
+
+<!-- header -->
+<div class="container-fluid">
+<div class="header">
+    <h1 class="inline">Sermons</h1>
+    <form class="float-right">
+        <input type="text" id="search-input" class="form-control" placeholder="search sermons">
+        <button type="submit" class="btn" id="search-btn"><i class="fa fa-search blue-color"></i></button>
+    </form>
+</div>
+</div>
+<!-- end of header -->
+
+<!-- main -->
+<div id="main-sermon">
+
+    @foreach($sermons as $sermon)
+
+        <!-- sermon -->
+            <div class="container bg-white margin-bottom-20p padding-bottom-20p">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                        <img class="ser-img" src="{{$sermon->image}}" alt="loading">
+                        <div class="date bg-blue position-absolute white-color"><i class="fa fa-clock-o"></i> {{($sermon->created_at)->toFormattedDateString()}}</div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="text-center">
+                            <img src="{{$sermon->user->image}}" class="poster-img">
+                        </div>
+                        <div class="text-center padding-top-10p"><i class="fa fa-user blue-color"></i> {{$sermon->user->salutation}} {{$sermon->user->username}}</div>
+                        <div class="poster-description text-center">
+                            {{$sermon->user->description}}
+                            <br>
+                            <div class="inline poster-social move-left" ><a href="#"><i class="fa fa-facebook-square"></i></a></div>
+                            <div class="inline poster-social move-right"><a href="#"><i class="fa fa-twitter-square"></i></a></div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-9">
+                        <h3 class="text-bold">{{$sermon->title}}</h3>
+                        <p class="all-sermon-paragraph">{{str_limit($sermon->body, $limit = 500, $end = '...')}}</p>
+                        <div class="text-left">
+                            <a href="http://localhost/church/public/sermons/{{$sermon->id}}" class="white-color"><button class="btn btn-primary">Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of sermon -->
+
+        @endforeach
+<div class="text-center">{{$sermons->links()}}</div>
+</div>
+<!-- end of main -->
+
+<!-- footer -->
+@include('includes.sermons-footer')
+
+
+</body>
+</html>

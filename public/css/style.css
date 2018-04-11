@@ -1,0 +1,635 @@
+/* authored by Boaz James Otieno */
+
+/* global css */
+.position-absolute{
+    position: absolute;
+}
+.float-left{
+    float: left;
+}
+.blue-color{
+     color: #6195FF !important;
+ }
+.bg-blue{
+    background: #6195FF !important;
+}
+.bg-white{
+    background: #fff !important;
+}
+.bg-transparent{
+    background: transparent !important;
+}
+.white-color{
+     color: #fff !important;
+ }
+.float-right{
+      float: right;
+  }
+.padding-top-10p{
+    padding-top: 10px;
+}
+.margin-bottom-20p{
+    margin-bottom: 20px;
+}
+.padding-bottom-20p{
+    padding-bottom: 20px;
+}
+.text-bold{
+    font-weight: bold;
+}
+.box-shadow-none{
+    box-shadow: none !important;
+}
+/* end of global css */
+body{
+    background: #FFF5EE;
+    overflow-x: hidden;
+    padding: 0;
+}
+
+/* landing page */
+#home-container{
+    font-weight: bold;
+    color: #000;
+    margin-top: -65vh;
+}
+
+#get-started{
+    font-size: 25px !important;
+}
+#down{
+    background: transparent;
+    border: none;
+    font-size: 70px;
+    color: #fff;
+    margin-top: 0.5vh;
+}
+/* end of landing page */
+
+/* navigation */
+#main-nav{
+    margin-top: 0 !important;
+    height: 70px;
+    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.5);
+
+}
+.nav-transparent{
+    border: none;
+    background: transparent;
+    box-shadow: none !important;
+}
+#alt-nav{
+    margin-top: 0 !important;
+    height: 70px;
+    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.5);
+}
+.nav{
+    padding-right: 70px;
+}
+.nav li{
+    margin-top: 6.5px;
+    font-size: 20px;
+}
+.nav li:hover{
+    background: #337ab7;
+    border: 2px #337ab7 solid;
+}
+.nav li a:hover{
+    color: #fff !important;
+}
+.nav li a{
+    color: #000 !important;
+}
+.active{
+    border: 3px #337ab7 solid;
+}
+.dropdown-menu{
+    z-index: 9999;
+}
+.dropdown-menu li{
+    margin-top: 5px !important;
+}
+.dropdown-menu li a:hover{
+    background: #337ab7 !important;
+    border: 2px #337ab7 solid;
+    color: #fff !important;
+}
+#logo{
+    width: 110px !important;
+    margin-top: -11px;
+}
+
+/* end of navigation */
+
+#main{
+    margin-top: 50vh;
+}
+
+/* about */
+.title{
+    font-weight: 700;
+    font-size: 50px;
+    color: #000;
+    padding: 50px;
+    font-family: "URW Bookman L";
+}
+#about-img{
+    width: 350px;
+    margin-top: 80px;
+}
+#about{
+    position: relative;
+}
+.item-title{
+    font-weight: bold;
+    font-family: "URW Bookman L";
+    padding: 20px 30px;
+}
+.about-paragraph{
+    font-size: 15px;
+    padding: 0 30px;
+    font-family: 'Varela Round', sans-serif;
+    color: #868F9B;
+}
+.about-img{
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+}
+.about-item{
+width: 100%;
+    height: 400px;
+    background: #fff;
+    margin-top: 50px;
+}
+.inline{
+    display: inline-block;
+}
+.border-radius1{
+    border-radius: 20px 0 0 20px;
+}
+.border-radius2{
+    border-radius: 0 20px 20px 0;
+}
+/* end of about */
+
+/*next service*/
+.clock-item{
+    width: 250px;
+    height: 250px;
+    border: #6195FF 5px solid;
+    margin: 20px 20px 50px 20px;
+}
+.clock-item div:first-child{
+    width: 240px;
+    height: 50%;
+    font-size: 50px;
+    padding-top: 20px;
+}
+.clock-item div:last-child{
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 15px;
+}
+/*next service*/
+
+/*google map*/
+#googleMap{
+    width: 100%;
+    height:380px;
+}
+/*google map*/
+
+/* latest sermon */
+.latest-sermon-item{
+    height: 530px;
+    background: #fff;
+    margin-top: 20px;
+}
+.latest-sermon-item:hover{
+    margin-top: -5px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+.sermon-img{
+    width: 100%;
+    height: 200px;
+}
+.sermon-paragraph{
+    font-size: 15px;
+    padding: 0 20px;
+    color: #868F9B;
+}
+.padding-20p{
+    padding-left: 20px;
+}
+/* latest sermon */
+
+/* contact */
+#contact div.col-md-6:last-child{
+    float: right;
+}
+.contact{
+    margin-bottom: 20px !important;
+}
+
+.contact-fa{
+    font-size: 40px;
+}
+/* end of contact */
+
+/* footer */
+footer{
+    background: #1C1D21;
+}
+
+.footer-social{
+    font-size: 50px !important;
+    margin-bottom: 50px;
+}
+#back-to-top{
+    background: transparent;
+    border: #6195FF 2px solid;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    font-size: 30px;
+    display:none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+/* end of footer */
+
+/* preloader */
+#preloader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #FFF;
+    z-index: 99999;
+}
+.ring{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border: 8px #3c3c3c solid;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 70px;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #6195FF;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #6195FF;
+    box-shadow: 0 0  20px rgba(0,0,0,0.5);
+}
+.ring:before{
+    content: '';
+    position: absolute;
+    top: -8px;
+    left:-8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    border: 9px solid transparent;
+    border-top: 9px solid #6195FF;
+    border-right: 9px solid #6195FF;
+    border-radius: 50%;
+    animation: animateCircle 2s linear infinite;
+}
+.ring-span{
+    display: block;
+    position: absolute;
+    top: calc(50% - 3px);
+    left: 50%;
+    width: calc(50% - 5px);
+    height: 4px;
+    background: transparent;
+    transform-origin: left;
+    animation: animate 2s linear infinite;
+}
+.ring-span:before{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #6195FF;
+    top: 20px;
+    right: -6px;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(5deg);
+    }
+    100%{
+        transform: rotate(365deg);
+    }
+}
+@keyframes animateCircle {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* end of preloader */
+
+/*sermons*/
+
+/* header */
+
+.header{
+    margin-top: -130px;
+    height: 100px;
+    background: #fff;
+    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.5);
+    font-family: "URW Bookman L",sans-serif;
+    padding: 0 100px 0 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+.header h1{
+    padding: 5px 20px 20px 20px;
+    font-size: 36px;
+    text-shadow: 0 0 3px #3c3c3c;
+    text-space: 4px;
+}
+#search-input{
+    height: 40px;
+    margin-top: 30px;
+    font-size: 20px;
+    width: 250px;
+    border: #6195FF 1px solid;
+    margin-right: 40px;
+}
+#search-btn{
+    position: absolute;
+    background: transparent;
+    margin-top: -49px;
+    margin-left: 200px;
+    font-size: 32px;
+    border: 0;
+}
+.ser-img{
+    width: 100%;
+    height: 400px;
+    margin-bottom: 10px;
+}
+.container-fluid{
+    margin-top: 200px;
+    padding: 0;
+}
+.date{
+    margin-top: -400px;
+    width: auto;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+}
+.poster-img{
+    width: 160px;
+    height: 160px;
+}
+.poster-social{
+    font-size: 40px;
+}
+.poster-social.move-left:hover{
+    margin-left: -5px;
+    padding-right: 5px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+.poster-social.move-right:hover{
+    margin-right: -5px;
+    padding-left: 5px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+.all-sermon-paragraph{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #868F9B;
+}
+.pagination{
+    z-index: 0;
+}
+.pagination .page-item.active{
+    border: none !important;
+}
+.pagination .page-item .page-link{
+    font-size: 20px !important;
+}
+/* header */
+/*end of sermons */
+
+/*contact*/
+textarea#message{
+    overflow: hidden !important;
+}
+/*contact*/
+
+@media (max-width: 767px) {
+    /* landing page small*/
+    #slider-main{
+        margin-top: 50px;
+    }
+    .nav-transparent{
+        background: #fff;
+    }
+    #home-container{
+margin-top: -35vh;
+        width: 80%;
+    }
+
+    #home-container h1{
+        font-size: 20px;
+margin-left: 30%;
+    }
+
+    #home-container h3{
+        font-size: 18px;
+        margin-left: 30%;
+    }
+
+    /* end of landing page small*/
+
+    /* navigation */
+    #main{
+        margin-top: 16vh;
+
+    }
+    .nav{
+        padding-right: 0;
+        overflow-x: hidden;
+    }
+    .nav li{
+        margin-top: 9px;
+        font-size: 20px;
+
+    }
+    #main-nav{
+        height: auto;
+    }
+    #nav-xs{
+        position: relative;
+    }
+    #dropdown:hover{
+        background: #fff !important;
+    }
+    #dropdown >a:hover{
+        color: #000 !important;
+    }
+
+    #logo{
+        width: 80px !important;
+        margin-top: -11px;
+    }
+    #alt-nav{
+        margin-top: -40px !important;
+        height: auto;
+
+    }
+
+    /* end of navigation */
+
+    /* titles */
+    .title{
+        font-weight: 700;
+        font-size: 30px;
+        padding: 30px;
+    }
+    /* end of titles */
+
+    /* about */
+    #about-img{
+        width: 200px;
+    }
+    .border-radius1{
+        border-radius: 10px;
+    }
+    .border-radius2{
+        border-radius: 10px;
+    }
+    .about-paragraph{
+        font-size: 15px;
+        padding: 0 15px;
+    }
+    .about-img{
+        width: 100%;
+        height: auto;
+        margin-top: 50px;
+    }
+    .about-item{
+        width: 100%;
+        height: auto;
+        padding-bottom: 10px;
+    }
+    /* end of about */
+
+    /*next service*/
+    .clock-item{
+        width: 200px;
+        height: 200px;
+        border: #6195FF 5px solid;
+        margin: 20px 20px 50px 20px;
+    }
+    .clock-item div:first-child{
+        width: 190px;
+    }
+    /*end of next service*/
+
+    /*google map*/
+    #googleMap{
+        height: 50vh;
+    }
+    /*google map*/
+
+    /* latest sermon */
+    .sermon-img{
+        height: auto;
+    }
+    .latest-sermon-item{
+        height: auto;
+        padding-bottom: 20px;
+    }
+    .latest-sermon-item:hover{
+        margin-top: 10px;
+    }
+    /* latest sermon */
+
+    /* sermons */
+    /* header */
+    .header{
+        margin-top: -150px;
+    }
+    .header h1{
+        margin-top: 0;
+        padding-left: 20px;
+        font-size: 25px;
+        text-shadow: 0 0 3px #3c3c3c;
+        text-space: 4px;
+    }
+    #search-input{
+        margin-top: -20px;
+        font-size: 20px;
+        width: 200px;
+        margin-right: -90px;
+        height: 30px;
+    }
+    #search-btn{
+        margin-top: -39px;
+        margin-left: 160px;
+        font-size: 25px;
+    }
+    /* header */
+
+    /*main */
+    #main-sermon{
+        margin-top: -35px;
+    }
+    .ser-img{
+        width: 100%;
+        height: 130px;
+    }
+    .date{
+        margin-top: -130px;
+        padding: 2px 5px;
+    }
+    .poster-img{
+        width: 80px;
+        height: 80px;
+    }
+    /* main */
+    /* sermons */
+
+    /*contact*/
+    #contact div.col-md-6:last-child{
+        float: none;
+    }
+
+    /*end of contact*/
+
+}
+
+@media (min-width: 769px) and (max-width: 991px){
+    .nav{
+        padding-right: 10px;
+    }
+}
