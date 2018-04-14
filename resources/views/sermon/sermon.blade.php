@@ -48,7 +48,7 @@
     <div class="container bg-white margin-bottom-20p padding-bottom-20p">
         <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                <img class="ser-img" src="../{{$sermon->image}}" alt="loading">
+                <img class="ser-img" src="../storage/sermon-images/{{$sermon->image}}" alt="loading">
                 <div class="date bg-blue position-absolute white-color"><i class="fa fa-clock-o"></i> {{($sermon->created_at)->toFormattedDateString()}}</div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">

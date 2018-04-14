@@ -8,7 +8,7 @@
                 <!-- sermon -->
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="latest-sermon-item wow fadeInRight" data-wow-delay="0.6s">
-                            <img class="img-responsive sermon-img" src="{{$sermon->image}}" alt="loading">
+                            <img class="img-responsive sermon-img" src="storage/sermon-images/{{$sermon->image}}" alt="loading">
                             <div class="inline padding-20p"><i class="fa fa-user blue-color"></i> {{$sermon->user->salutation}} {{$sermon->user->username}}</div>
                             <div class="inline padding-20p"><i class="fa fa-clock-o blue-color"></i> {{($sermon->created_at)->toFormattedDateString()}}</div>
                             <h3 class="padding-20p">{{$sermon->title}}</h3>

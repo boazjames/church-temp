@@ -61,6 +61,13 @@
 </div>-->
 <!-- end of home -->
 
+<div class="set-time hidden">
+    @foreach($times as $time)
+
+        <div>{{$time->time}}</div>
+
+    @endforeach
+</div>
 
 <!-- about -->
 @include('includes.about')

@@ -16,3 +16,27 @@ Route::get('/','SermonController@limit3');
 Route::get('sermons','SermonController@index');
 
 Route::get('sermons/{id}','SermonController@show');
+
+Route::get('admin_church','SessionsController@index');
+
+Route::get('admin_church/logout','SessionsController@logout');
+
+Auth::routes();
+
+Route::post('login','SessionsController@login');
+
+Route::post('admin_church/post','SermonController@store');
+
+Route::post('admin_church/video','HomeController@storeVideo');
+
+Route::post('admin_church/time','HomeController@setTime');
+
+Route::get('admin_church/home', 'HomeController@index')->name('home');
+
+Route::get('admin_church/sermon', 'HomeController@sermon');
+
+Route::get('admin_church/video', 'HomeController@video');
+
+Route::get('admin_church/time', 'HomeController@time');
+
+Route::get('admin_church/admin', 'HomeController@admin');
