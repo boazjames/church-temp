@@ -4,7 +4,7 @@
                 <div class="inline text-container">
                     <span class="color-light">SERMONS</span>
                     <br>
-                    <span class="text-bold">12</span>
+                    <span class="text-bold">{{$count_array['sermons']}}</span>
                 </div>
             </div>
             <div class="overview-item bg-white inline">
@@ -12,7 +12,7 @@
                 <div class="inline text-container">
                     <span class="color-light">VIDEOS</span>
                     <br>
-                    <span class="text-bold">10</span>
+                    <span class="text-bold">{{$count_array['videos']}}</span>
                 </div>
             </div>
             <div class="overview-item bg-white inline">
@@ -20,7 +20,7 @@
                 <div class="inline text-container">
                     <span class="color-light">ADMINS</span>
                     <br>
-                    <span class="text-bold">5</span>
+                    <span class="text-bold">{{$count_array['users']}}</span>
                 </div>
             </div>
             <div class="clock">

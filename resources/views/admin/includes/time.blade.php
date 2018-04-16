@@ -14,5 +14,24 @@
         <div class="bg-blue inline clock-item"><div id="hours" class="bg-white">00</div><div>Hours</div> </div>
         <div class="bg-blue inline clock-item"><div id="minutes" class="bg-white">00</div><div>Minutes</div> </div>
         <div class="bg-blue inline clock-item"><div id="seconds" class="bg-white">00</div><div>Seconds</div> </div>
+
+        <table id="time-tbl" class="table-striped table-responsive">
+            <tr>
+                <th>Time ID</th>
+                <th>Time</th>
+                <th>Set by</th>
+                <th></th>
+            </tr>
+            @foreach($times as $time)
+                <tr>
+                    <td class="text-center">{{$time->id}}</td>
+                    <td class="text-left">{{$time->time}}</td>
+                    <td class="text-left">{{$time->user->salutation}} {{$time->user->username}}</td>
+                    <td class="text-left"><button class="btn btn-warning btn-sm time-edit-btn" data-id="{{$time->id}}">Edit</button> <button class="btn btn-danger btn-sm time-delete-btn" data-id="{{$time->id}}">Delete</button> </td>
+                </tr>
+            @endforeach
+
+        </table>
+
     </div>
 </div>

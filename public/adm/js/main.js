@@ -4,6 +4,8 @@ $(document).ready(function () {
 
     $('#preview').hide();
 
+    $('.alert').hide();
+
     var nav=$('#nav-collapsed');
     var navSm=$('#nav-collapsed-sm');
     $('button.toggle').on('click',function (e) {
@@ -154,7 +156,26 @@ var alert=$('.alert');
         $('#set-time-form')[0].reset();
     });
 
+    $('.add-admin-link').on('click',function () {
+        $('#add-admin').modal('show');
+        alert.hide();
+        $('#add-admin-form')[0].reset();
+    });
 
+    $('.sermon-edit-btn').on('click',function () {
+        var id=$(this).attr('data-id');
+        location.href='http://localhost/church/public/admin_church/'+id+'edit-sermon';
+    });
+
+    $('.video-edit-btn').on('click',function () {
+        var id=$(this).attr('data-id');
+        location.href='http://localhost/church/public/admin_church/'+id+'edit-video';
+    });
+
+    $('.time-edit-btn').on('click',function () {
+        var id=$(this).attr('data-id');
+        location.href='http://localhost/church/public/admin_church/'+id+'edit-time';
+    });
 
     // file upload
 

@@ -76,6 +76,11 @@
     height: 120px;
     border: #6195FF 2px solid;
 }
+
+#add-sermon .modal-dialog{
+    width: 1000px !important;
+}
+
 /* end of global css */
 
 body{
@@ -100,6 +105,12 @@ body{
     border-radius: 0 0 5px 5px;
 }
 /*end of login*/
+
+/*modals*/
+.confirmation_message{
+    font-size: 20px;
+}
+/*end of modals*/
 
 /* navigation */
 #main-nav{
@@ -315,7 +326,14 @@ body{
     border: #6195FF 1px solid
 }
 .pagination{
-margin: -10px 0 10px 0 !important;
+margin: -10px 0 30px 0 !important;
+}
+#edit-sermon-form{
+    padding: 20px;
+}
+
+.edit{
+    padding: 20px;
 }
 /* end of navigation */
 
@@ -420,17 +438,9 @@ margin: -10px 0 10px 0 !important;
     width: 100%;
     background: #021F4E;
 }
-#filt-sermon{
-    width: 95%;
-    margin: 20px 30px;
-}
-#filt-video{
-    width: 95%;
-    margin: 20px 30px;
-}
-#filt-admin {
-    width: 95%;
-    margin: 20px 30px;
+.filt-form{
+    width: 80%;
+    margin: 20px 10px 20px 30px;
 }
 table{
     width: 100%;
@@ -590,6 +600,14 @@ a:hover{
 
 @media (max-width: 767px) {
 
+    #edit-sermon-form{
+        padding: 0;
+    }
+
+    .edit{
+        padding: 0;
+    }
+
     /*login*/
     .form-wrapper{
         width: 100%;
@@ -744,19 +762,11 @@ a:hover{
         overflow-x: auto;
         margin-top: 60px;
     }
+.filt-form{
+    width: 200px;
+    margin: 5px 5px;
+}
 
-    #filt-sermon {
-        width: 200px;
-        margin: 5px 5px;
-    }
-    #filt-video {
-        width: 200px;
-        margin: 5px 5px;
-    }
-    #filt-admin {
-        width: 200px;
-        margin: 5px 5px;
-    }
     table{
         width: 500px;
         margin-left: 0;

@@ -51,4 +51,54 @@ class SermonController extends Controller
 
     }
 
+    public function delete(){
+        $sermon=new Sermon;
+
+        $id=request('id');
+
+        $sermon->destroy($id);
+    }
+
+    public function value($id){
+        $sermons=new Sermon;
+        $sermon_edit=$sermons->find($id);
+
+        return view('admin.edit-sermon',compact('sermon_edit'));
+
+    }
+
+    public function edit(){
+        $sermon=new Sermon;
+        $this->validate(request(),[
+            'title'=>'required',
+            'body'=>'required'
+        ]);
+
+        $updated_at=Carbon::now('Africa/Nairobi');
+        $id=request('id');
+
+        $sermon=$sermon->find($id);
+        $sermon->title=request('title');
+        $sermon->body=request('body');
+        $sermon->updated_at=$updated_at;
+
+        $sermon->save();
+
+        return redirect('admin_church/sermon');
+
+    }
+
+    public function filter(){
+        $sermon=new Sermon;
+        $this->validate(request(),[
+            'title'=>'required'
+        ]);
+
+        $title=request('title');
+
+        $sermons=$sermon->where('title','like','%'.$title.'%')->paginate(5);
+
+        return view('admin.sermon-view',compact('sermons'));
+    }
+
 }

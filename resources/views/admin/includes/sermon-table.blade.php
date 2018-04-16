@@ -1,8 +1,10 @@
 <div class="sermon dynamic">
 <div class="panel bg-white">
     <div class="panel-heading white-color text-bold bg-blue-dark">Sermons</div>
-    <form>
-        <input type="text" id="filt-sermon" class="form-control" placeholder="Filter Sermons...">
+    <form method="post" action="filt-sermon">
+        {{csrf_field()}}
+        <input type="text" class="form-control inline filt-form" name="title" placeholder="Filter Sermons..." required>
+       <button type="submit" class="btn btn-primary inline">Filter</button>
     </form>
     <table id="sermon-tbl" class="table-striped table-responsive">
         <tr>
@@ -18,7 +20,7 @@
             <td>{{$sermon->title}}</td>
             <td>{{$sermon->user->salutation}} {{$sermon->user->username}}</td>
             <td>{{($sermon->created_at)->toFormattedDateString()}}</td>
-            <td><button class="btn btn-warning btn-sm" data-id="{{$sermon->id}}">Edit</button> <button class="btn btn-danger btn-sm" data-id="{{$sermon->id}}">Delete</button> </td>
+            <td><button class="btn btn-warning btn-sm sermon-edit-btn" data-id="{{$sermon->id}}">Edit</button> <button class="btn btn-danger btn-sm sermon-delete-btn" data-id="{{$sermon->id}}">Delete</button> </td>
         </tr>
             @endforeach
     </table>

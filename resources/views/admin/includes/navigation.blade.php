@@ -34,13 +34,9 @@
                 @endif
             <h6 class="text-bold">{{Auth::user()->salutation}} {{Auth::user()->username}}</h6>
             <div class="text-center">
-                <button class="btn-transparent" id="settings"><i class="fa fa-cog blue-color"></i></button>
-                <button class="btn-transparent" id="sign-out"><i class="fa fa-sign-out blue-color"></i></button>
+                </a> <button class="btn-transparent" id="settings"><i class="fa fa-cog blue-color"></i></button>
+                <a href="logout"><button class="btn-transparent" id="sign-out"><i class="fa fa-sign-out blue-color"></i></button></a>
             </div>
-            <form class="">
-                <input type="text" id="search-input" class="form-control" placeholder="search sermons">
-                <button type="submit" class="btn-transparent position-absolute" id="search-btn"><i class="fa fa-search blue-color"></i></button>
-            </form>
         </li>
         <li class="overview-link item"><a class="white-color"><button class="btn-transparent"><i class="fa fa-cogs white-color"></i></button>Dashboard</a></li>
         <li class="item"><a class="white-color"><button class="btn-transparent"><i class="fa fa-book white-color"></i></button>Sermons</a><i class="fa fa-caret-right white-color float-right"></i>
@@ -52,7 +48,7 @@
         <li class="item"><a class="white-color"><button class="btn-transparent"><i class="fa fa-video-camera white-color"></i></button>Videos</a><i class="fa fa-caret-right white-color float-right"></i>
             <ul class="position-absolute hidden">
                 <li class="view-video"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-edit white-color"></i></button>View Videos</a></li>
-                <li class="add-video-link"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-plus-circle white-color"></i></button>Add Videos</a></li>
+                <li class="add-video-link"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-plus-circle white-color"></i></button>Link Video</a></li>
             </ul>
         </li>
         <li class="item"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-clock-o white-color"></i></button>Service</a><i class="fa fa-caret-right white-color float-right"></i>
@@ -98,7 +94,7 @@
         <li class="item"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-video-camera white-color"></i></button></a>
             <ul class="position-absolute hidden">
                 <li class="view-video"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-edit white-color"></i></button>View Videos</a></li>
-                <li class="add-video-link"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-plus-circle white-color"></i></button>Add Videos</a></li>
+                <li class="add-video-link"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-plus-circle white-color"></i></button>Link Video</a></li>
             </ul>
         </li>
         <li class="item"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-clock-o white-color"></i></button></a>
