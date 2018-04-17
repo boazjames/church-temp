@@ -6,6 +6,8 @@
         <input type="text" class="form-control inline filt-form" name="title" placeholder="Filter Sermons..." required>
        <button type="submit" class="btn btn-primary inline">Filter</button>
     </form>
+
+    @if(count($sermons)>0)
     <table id="sermon-tbl" class="table-striped table-responsive">
         <tr>
             <th>Sermon ID</th>
@@ -24,6 +26,9 @@
         </tr>
             @endforeach
     </table>
+        @else
+    <div class="jumbotron padding-left-30p"><h3>There is no such sermon</h3></div>
+        @endif
 </div>
 
     <div class="links text-center">{{$sermons->links()}}</div>

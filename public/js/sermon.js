@@ -24,6 +24,12 @@ $(document).ready(function () {
         }
         /* end of fixed nav */
     });
+
+    $('.search-result').on('click',function () {
+        var id=$(this).attr('data-id');
+        location.href="http://localhost/church/public/sermons/"+id;
+    });
+
 });
 
 //preloader

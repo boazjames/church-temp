@@ -47,6 +47,9 @@
 .padding-left-50p{
     padding-left: 50px;
 }
+.padding-left-30p{
+    padding-left: 30px;
+}
 .text-bold{
     font-weight: bold;
 }
@@ -64,17 +67,20 @@
 .bg-blue-dark{
     background: #021F4E;
 }
-#label-for-image{
+.label{
     background: #6195FF;
     color: #fff;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 15px;
 }
-#preview{
+.preview{
     width: 200px;
     height: 120px;
     border: #6195FF 2px solid;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #add-sermon .modal-dialog{
@@ -310,6 +316,7 @@ body{
     width: 70px;
     height: 70px;
     border: #021F4E 2px solid;
+    cursor: pointer;
 }
 .user-img-sm{
     width: 40px;
@@ -494,6 +501,52 @@ textarea{
     margin-bottom: 20px;
 }
 /* end of modals */
+
+/*messages*/
+.filter-message{
+    padding: 10px 20px;
+}
+.filter-message button{
+    margin-bottom: 10px;
+}
+.message-jumbotron{
+    background: #eee;
+    border-bottom: #ccc 1px solid;
+    border-top: #ccc 1px solid;
+    padding: 10px 20px;
+    color: #868F9B;
+}
+.message-jumbotron-read{
+    background: #fff;
+    border-bottom: #ccc 1px solid;
+    border-top: #ccc 1px solid;
+    padding: 10px 20px;
+    color: #3c3c3c;
+}
+.message-jumbotron:hover{
+    background: rgba(0,0,0,.2);
+    cursor: pointer;
+}
+.message-jumbotron-read:hover{
+    background: rgba(0,0,0,.2);
+    cursor: pointer;
+}
+.message-email{
+    width: 25%;
+    color: #000;
+}
+.message-links{
+    margin: 20px 0 0 0 !important;
+}
+.message{
+    padding: 30px 20px;
+}
+.message-body{
+    width: 60%;
+    margin: 20px 0;
+}
+/*end of messages*/
+
 /* footer */
 #back-to-top{
     background: transparent;
@@ -823,6 +876,12 @@ a:hover{
         height: 50%;
     }
     /* end of time */
+
+    /*messages*/
+    .message-body{
+        width: 100%;
+    }
+    /*end of messages*/
     }
 
 @media (min-width: 768px) and (max-width: 991px){

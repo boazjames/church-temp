@@ -101,4 +101,18 @@ class SermonController extends Controller
         return view('admin.sermon-view',compact('sermons'));
     }
 
+    public function search(){
+        $sermon=new Sermon;
+
+        $this->validate(request(),[
+            'title'=>'required|min:3'
+        ]);
+
+        $title=request('title');
+
+        $sermons=$sermon->where('title','like','%'.$title.'%')->paginate(10);
+
+        return view('sermon.search-results',compact('sermons'));
+    }
+
 }

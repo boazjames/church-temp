@@ -80,6 +80,7 @@
 
 <!-- latest sermon -->
 @include('includes.latest-sermon')
+
 <!-- contact -->
 @include('includes.contact')
 

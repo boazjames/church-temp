@@ -2,8 +2,6 @@
 var width=screen.availWidth;
 $(document).ready(function () {
 
-    $('#preview').hide();
-
     $('.alert').hide();
 
     var nav=$('#nav-collapsed');
@@ -162,6 +160,16 @@ var alert=$('.alert');
         $('#add-admin-form')[0].reset();
     });
 
+    $('.user-img').on('click',function (e) {
+        e.preventDefault();
+        $('.label-for-image').find( 'span' ).html('Choose an image file...');
+        $('.preview').attr('src','#');
+        $('.preview').hide();
+        $('#add-profile-photo').modal('show');
+        $('#add-sermon-form')[0].reset();
+
+    });
+
     $('.sermon-edit-btn').on('click',function () {
         var id=$(this).attr('data-id');
         location.href='http://localhost/church/public/admin_church/'+id+'edit-sermon';
@@ -175,6 +183,9 @@ var alert=$('.alert');
     $('.time-edit-btn').on('click',function () {
         var id=$(this).attr('data-id');
         location.href='http://localhost/church/public/admin_church/'+id+'edit-time';
+    });
+    $('#settings').on('click',function () {
+        location.href='http://localhost/church/public/admin_church/edit-profile';
     });
 
     // file upload
@@ -191,41 +202,38 @@ var alert=$('.alert');
     }
 
 
-    function readURL(input) {
+    function readURL(input,preview) {
 
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
             reader.onload = function(e) {
-                $('#preview').show();
-                $('#preview').attr('src', e.target.result);
+                preview.show();
+                preview.attr('src', e.target.result);
             }
 
             reader.readAsDataURL(input.files[0]);
         }
     }
 
-        var input	 = $('#image'),
-            label	 = $('#label-for-image'),
-            labelVal = label.html();
-
+    function previewImage(input,label,preview,alert) {
         input.on( 'change', function( e )
         {
             if(this.files[0].size/1024>2048){
-                $('.alert').show();
-                $('.alert').html('File size must not exceed 2MB');
+                alert.show();
+                alert.html('File size must not exceed 2MB');
                 $(this).val('');
                 setTimeout(function () {
-                    $('.alert').fadeOut(2000);
+                    alert.fadeOut(2000);
                 },3000)
             }else {
-                $('#preview').hide();
-                $('#label-for-image').find( 'span' ).html('Choose an image file...');
+                preview.hide();
+                label.find( 'span' ).html('Choose an image file...');
 
                 var path=$(this).val().split('\\'),
                     fileName=path[path.length-1];
-                if(verifyExtension(fileName,['png','jpeg','jpg'])==true){
-                    readURL(this);
+                if(verifyExtension(fileName,['png','PNG','jpeg','JPEG','jpg','JPG'])==true){
+                    readURL(this,preview);
                     label.find( 'span' ).html( fileName );
                     // if( e.target.value ){
                     //
@@ -235,13 +243,13 @@ var alert=$('.alert');
                     if( fileName )
                         label.find( 'span' ).html( fileName );
                     else
-                        label.html( labelVal );
+                        label.html( 'Choose an image file...' );
                 }else{
-                    $('.alert').show();
-                    $('.alert').html('File must be jgp, jpeg or png image type');
+                    alert.show();
+                    alert.html('File must be jgp, jpeg or png image type');
                     $(this).val('');
                     setTimeout(function () {
-                        $('.alert').fadeOut(2000);
+                        alert.fadeOut(2000);
                     },3000)
                 }
 
@@ -250,10 +258,28 @@ var alert=$('.alert');
 
         });
 
-        // Firefox bug fix
-        // input
-        //     .on( 'focus', function(){ input.addClass( 'has-focus' ); })
-        //     .on( 'blur', function(){ input.removeClass( 'has-focus' ); });
+    }
+
+        var input	 = $('#image'),
+            label	 = $('#label-for-image'),
+            preview=$('#preview'),
+            alert=$('.alert-div');
+
+   previewImage(input,label,preview,alert);
+
+    var input_photo	 = $('#photo'),
+        label_photo	 = $('#label-for-photo'),
+        preview_photo=$('#preview-photo'),
+        alert_photo=$('.alert-div-photo');
+
+    previewImage(input_photo,label_photo,preview_photo,alert_photo);
+
+    $('#reply-form').hide();
+
+    $('.reply').on('click',function () {
+        $('#reply-form').fadeIn(2000);
+        $(this).hide();
+    });
 
 });
 

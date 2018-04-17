@@ -6,24 +6,21 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use App\User;
 
-class WelcomeAgain extends Mailable
+class Reply extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $user;
-    public $password;
+    public $message;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(User $user,$password)
+    public function __construct($message)
     {
-        $this->user=$user;
-        $this->password=$password;
+        $this->message=$message;
     }
 
     /**
@@ -33,6 +30,6 @@ class WelcomeAgain extends Mailable
      */
     public function build()
     {
-        return $this->markdown('email.welcome-again');
+        return $this->markdown('email.reply');
     }
 }

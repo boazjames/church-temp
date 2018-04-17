@@ -22,10 +22,11 @@
                     </div>
                     <div class="form-group">
                         <label>Sermon image</label>
-                        <input type="file" class="hidden" name="image" id="image">
+                        <input type="file" class="hidden" name="image" id="image" required>
                         <br>
-                        <label for="image" id="label-for-image"><i class="fa fa-upload"></i> <span>Choose an image file...</span> </label>
-                        <img src="#" alt="" id="preview">
+                        <label for="image" id="label-for-image" class="label"><i class="fa fa-upload"></i> <span>Choose an image file...</span> </label>
+                        <br>
+                        <img src="#" alt="" id="preview" class="preview">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-warning btn-lg">Add</button>
@@ -33,7 +34,7 @@
 
                 </form>
                 <br>
-                <div class="alert alert-danger"></div>
+                <div class="alert alert-danger alert-div"></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -244,3 +245,39 @@
     </div>
 </div>
 <!-- end of modal delete success-->
+
+<!-- Modal profile image-->
+<div id="add-profile-photo" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form method="post" enctype="multipart/form-data" id="add-profile-photo-form">
+                    {{csrf_field()}}
+                    
+                    <div class="form-group">
+                        <input type="file" class="hidden" name="image" class="image" id="photo">
+                        <br>
+                        <label for="photo" class="label" id="label-for-photo"><i class="fa fa-upload"></i> <span>Choose an image file...</span> </label>
+                        <br>
+                        <img src="#" alt="" class="preview" id="preview-photo">
+                        <br>
+                        <button type="submit" class="btn bg-blue text-bold white-color" id="upload">Upload</button>
+                    </div>
+
+                </form>
+                <br>
+                <div class="alert alert-danger alert-div-photo"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- end of modal profile image -->

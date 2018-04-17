@@ -11,6 +11,9 @@ $(document).ready(function () {
     function alertSuccess(message) {
         $('.alert-success').show();
         $('.alert-success').html(message);
+        setTimeout(function () {
+            $('.alert').fadeOut(2000);
+        },2000)
     }
 
     function ajaxSuccess(form_ref,modal_add_selector,message) {
@@ -20,7 +23,28 @@ $(document).ready(function () {
         alertSuccess(message);
         setTimeout(function () {
             $('#success_modal').modal('hide');
-        }, 3000);
+            location.reload(true);
+        }, 2000);
+    }
+
+    function ajaxSuccessReply(form_ref,message) {
+        form_ref[0].reset();
+        form_ref.hide();
+        alertSuccess(message);
+        setTimeout(function () {
+            $('.reply').show();
+        }, 4000);
+    }
+
+    function ajaxSuccessImage(form_ref,modal_add_selector,message) {
+        form_ref[0].reset();
+        $(modal_add_selector).modal('hide');
+        $('#success_modal').modal('show');
+        alertSuccess(message);
+        setTimeout(function () {
+            $('#success_modal').modal('hide');
+            location.reload(true);
+        }, 2000);
     }
 
     function ajaxDeleteSuccess(message) {
@@ -60,6 +84,27 @@ $(document).ready(function () {
             cache: false,
             processData: false,
             success: ajaxSuccess(form_ref,modal_add_selector,message)
+        });
+    }
+
+    function ajaxRequestImage(Url,Data,form_ref,modal_add_selector,message) {
+        $.ajax({
+            url: Url,
+            method: "POST",
+            data: Data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: ajaxSuccessImage(form_ref,modal_add_selector,message)
+        });
+    }
+
+    function ajaxSendMessage(Url,Data,form_ref,message) {
+        $.ajax({
+            url: Url,
+            method: "POST",
+            data: Data,
+            success: ajaxSuccessReply(form_ref,message)
         });
     }
 
@@ -176,5 +221,19 @@ $(document).ready(function () {
         });
     });
 
+
+    $('#add-profile-photo-form').on('submit',function (e) {
+        e.preventDefault();
+        var form = $(this);
+        var form_data = new FormData(form[0]);
+        ajaxRequestImage('edit-profile-photo',form_data,form,'#add-profile-photo','Profile photo changed successfully');
+    });
+
+    $('#reply-form').on('submit',function (e) {
+        e.preventDefault();
+        var form = $(this);
+        var form_data = form.serialize();
+        ajaxSendMessage('send-message',form_data,form,'Message sent successfully.');
+    });
 
 });

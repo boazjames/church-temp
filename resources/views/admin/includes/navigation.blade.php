@@ -28,7 +28,7 @@
         <li class="item1"><h5 class="text-bold white-color">Christian Church</h5><button class="toggle-lg float-right" action="show"><span class="fa fa-bars white-color"></span></button></li>
         <li class="bg-white text-center">
             @if(Auth::user()->image)
-            <img src="../{{Auth::user()->image}}" class="user-img img-circle">
+            <img src="../storage/user-images/{{Auth::user()->image}}" class="user-img img-circle">
             @else
                 <img src="../users-img/user.jpg" class="user-img img-circle">
                 @endif
@@ -79,9 +79,9 @@
         <li class="item1-sm"><button class="toggle" action="show"><span class="fa fa-bars white-color"></span></button></li>
         <li class="bg-white text-center">
             @if(Auth::user()->image)
-            <img src="../{{Auth::user()->image}}" class="user-img-sm img-circle">
+            <img src="../storage/user-images/{{Auth::user()->image}}" class="user-img-sm img-circle">
             @else
-                <img src="../users-img/user.jpg" class="user-img-sm img-circle">
+                <img src="../storage/user-images/user.jpg" class="user-img-sm img-circle">
             @endif
         </li>
         <li class="overview-link item"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-cogs white-color"></i></button></a></li>

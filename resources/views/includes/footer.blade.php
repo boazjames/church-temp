@@ -44,6 +44,9 @@
 <!-- main script -->
 <script src="js/main.js"></script>
 
+<!-- ajax request -->
+<script src="js/ajax_requests.js"></script>
+
 <!-- wow script -->
 <script src="js/wow.min.js"></script>
 

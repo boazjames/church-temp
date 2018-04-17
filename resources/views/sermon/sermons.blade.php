@@ -36,8 +36,9 @@
 <div class="container-fluid">
 <div class="header">
     <h1 class="inline">Sermons</h1>
-    <form class="float-right">
-        <input type="text" id="search-input" class="form-control" placeholder="search sermons">
+    <form method="post" class="float-right" action="search">
+        {{csrf_field()}}
+        <input type="text" id="search-input" class="form-control" minlength="3" name="title" placeholder="search sermons" required>
         <button type="submit" class="btn" id="search-btn"><i class="fa fa-search blue-color"></i></button>
     </form>
 </div>
@@ -59,7 +60,7 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <div class="text-center">
-                            <img src="{{$sermon->user->image}}" class="poster-img">
+                            <img src="storage/user-images/{{$sermon->user->image}}" class="poster-img">
                         </div>
                         <div class="text-center padding-top-10p"><i class="fa fa-user blue-color"></i> {{$sermon->user->salutation}} {{$sermon->user->username}}</div>
                         <div class="poster-description text-center">

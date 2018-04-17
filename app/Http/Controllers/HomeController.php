@@ -220,5 +220,50 @@ class HomeController extends Controller
         return view('admin.admin-view',compact('admins'));
     }
 
+    public function adminDetails(){
+        $user=new User;
+        $id=auth()->id();
+        $user=$user->find($id);
+        return view('admin.edit-profile',compact('user'));
+    }
+
+    public function editAdmin(){
+        $user=new User;
+        $this->validate(request(),[
+            'salutation'=>'required',
+            'description'=>'required'
+        ]);
+
+        $updated_at=Carbon::now('Africa/Nairobi');
+        $id=auth()->id();
+
+        $user=$user->find($id);
+        $user->salutation=request('salutation');
+        $user->description=request('description');
+        $user->updated_at=$updated_at;
+
+        $user->save();
+
+        return redirect('admin_church/home');
+    }
+
+    public function editPhoto(){
+        $user=new User;
+
+        $this->validate(request(),[
+            'image'=>'required|image'
+        ]);
+        $updated_at=Carbon::now('Africa/Nairobi');
+        $file = request('image');
+        $id=auth()->id();
+
+        $path = $file->store('user-images', 'public');
+
+        $user=$user->find($id);
+        $user->image=$file->hashName();
+        $user->updated_at=$updated_at;
+
+        $user->save();
+    }
 
 }

@@ -6,6 +6,8 @@
             <input type="text" class="form-control inline filt-form" name="username" placeholder="Filter Admin...">
             <button type="submit" class="btn btn-primary inline">Filter</button>
         </form>
+
+        @if(count($admins)>0)
         <table id="admin-tbl" class="table-striped table-responsive">
             <tr>
                 <th>Admin ID</th>
@@ -34,6 +36,10 @@
             @endforeach
 
         </table>
+
+            @else
+            <div class="jumbotron padding-left-30p"><h3>There is no such admin</h3></div>
+        @endif
     </div>
 
     <div class="links text-center">{{$admins->links()}}</div>
