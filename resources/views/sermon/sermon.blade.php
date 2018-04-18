@@ -9,31 +9,31 @@
     <title>Church</title>
 
     <!-- image slider css -->
-    <link rel="stylesheet" type="text/css" href="../css/image-slider.css">
+    <link rel="stylesheet" type="text/css" href="css/image-slider.css">
 
     <!-- font-awesome css -->
-    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 
     <!-- bootstrap css -->
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
     <!-- animate -->
-    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
 
     <!-- custom css -->
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 <body>
 
 <!-- navigation -->
-@include('includes.sermon-nav')
+@include('includes.sermons-nav')
 
 <!-- header -->
 <div class="container-fluid">
     <div class="header">
         <h1 class="inline">Sermons</h1>
-        <form method="post" class="float-right" action="../search">
+        <form method="post" class="float-right" action="search">
             {{csrf_field()}}
             <input type="text" id="search-input" class="form-control" minlength="3" name="title" placeholder="search sermons" required>
             <button type="submit" class="btn" id="search-btn"><i class="fa fa-search blue-color"></i></button>
@@ -49,12 +49,12 @@
     <div class="container bg-white margin-bottom-20p padding-bottom-20p">
         <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                <img class="ser-img" src="../storage/sermon-images/{{$sermon->image}}" alt="loading">
+                <img class="ser-img" src="storage/sermon-images/{{$sermon->image}}" alt="loading">
                 <div class="date bg-blue position-absolute white-color"><i class="fa fa-clock-o"></i> {{($sermon->created_at)->toFormattedDateString()}}</div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <div class="text-center">
-                    <img src="../storage/user-images/{{$sermon->user->image}}" class="poster-img">
+                    <img src="storage/user-images/{{$sermon->user->image}}" class="poster-img">
                 </div>
                 <div class="text-center padding-top-10p"><i class="fa fa-user blue-color"></i> {{$sermon->user->salutation}} {{$sermon->user->username}}</div>
                 <div class="poster-description text-center">
@@ -86,7 +86,7 @@
 
 
 <!-- footer -->
-@include('includes.sermon-footer')
+@include('includes.sermons-footer')
 
 
 </body>

@@ -14,7 +14,7 @@
                             <h3 class="padding-20p">{{$sermon->title}}</h3>
                             <p class="sermon-paragraph text-left">{{str_limit($sermon->body, $limit = 500, $end = '...')}}</p>
 
-                            <a class="padding-20p" href="#">Read more</a>
+                            <a class="padding-20p" href="http://localhost/church/public/{{$sermon->id}}sermon">Read more</a>
                         </div>
                     </div>
                     <!-- end of sermon -->

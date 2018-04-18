@@ -76,7 +76,7 @@
                         <h3 class="text-bold">{{$sermon->title}}</h3>
                         <p class="all-sermon-paragraph">{{str_limit($sermon->body, $limit = 500, $end = '...')}}</p>
                         <div class="text-left">
-                            <a href="http://localhost/church/public/sermons/{{$sermon->id}}" class="white-color"><button class="btn btn-primary">Read More</button></a>
+                            <a href="http://localhost/church/public/{{$sermon->id}}sermon" class="white-color"><button class="btn btn-primary">Read More</button></a>
                         </div>
                     </div>
                 </div>

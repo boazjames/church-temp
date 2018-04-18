@@ -1,6 +1,12 @@
 $(document).ready(function () {
 
+    $('iframe').attr("width","800");
+    $('iframe').attr("height","365");
     var width=screen.availWidth;
+    if(width<=767){
+        $('iframe').attr("width","315");
+        $('iframe').attr("height","150");
+    }
     $(window).on('scroll', function() {
 
 /* fixed nav */

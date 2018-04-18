@@ -8,13 +8,16 @@ use App\User;
 use App\Auth;
 use App\Time;
 use Carbon\Carbon;
+use App\Video;
 
 class SermonController extends Controller
 {
     public function limit3(){
+        $video=Video::limit(1)->latest()->get();
         $sermons=Sermon::limit(3)->latest()->get();
         $times=Time::limit(3)->latest()->get();
-        return view('index',compact('sermons'),compact('times'));
+        $arr=['times'=>$times,'video'=>$video];
+        return view('index',compact('sermons'),compact('arr'));
     }
     public function index(){
         $sermons=Sermon::orderBy('id', 'desc')->paginate(5);

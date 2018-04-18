@@ -75,8 +75,6 @@
 <!-- bootstrap script -->
 <script src="adm/js/bootstrap.min.js"></script>
 
-<!-- main script -->
-<script src="adm/js/main.js"></script>
 
 <script>
     $(document).ready(function () {

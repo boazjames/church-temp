@@ -17,7 +17,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sermon<i class="caret"></i></a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown01">
                     <li><a class="dropdown-item" href="#sermon">Latest Sermon</a></li>
-                    <li><a class="dropdown-item" href="#">All sermons</a></li>
+                    <li><a class="dropdown-item" href="sermos">All sermons</a></li>
                 </ul>
             </li>
             <li><a href="#contact">Contact Us</a></li>

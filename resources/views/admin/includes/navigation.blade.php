@@ -1,16 +1,34 @@
 <nav class="navbar navbar-default nav navbar-fixed-top bg-blue" id="main-nav">
     <div class="inline quick-links float-right">
         <i class="fa fa-gears"></i> <span class="text-bold">ADMIN</span>
-        <button class="btn-transparent" id="messages"><i class="fa fa-envelope-o white-color"></i><span class="white-color bg-blue-dark">5</span></button>
+        <button class="btn-transparent" id="messages"><i class="fa fa-envelope-o white-color"></i>
+            @if(count($unread_messages)<4)
+            <span class="white-color bg-blue-dark">{{count($unread_messages)}}</span>
+                @else
+                <span class="white-color bg-blue-dark">3+</span>
+                @endif
+        </button>
         <div class="position-absolute messages hidden">
             <ul>
-                <li class="text-bold">You have 2 new messages</li>
-                <li><a><span>Ruth</span><span>Pray for me</span><div><i class="fa fa-clock-o"></i> 2 hours ago</div></a></li>
-                <li><a><span>John</span><span>Do you have bible studies</span><div><i class="fa fa-clock-o"></i> 3 hours ago</div></a></li>
-                <li class="text-center"><a>View all messages</a></li>
+                @if($unread_messages)
+                <li class="text-bold">You have {{count($unread_messages)}} new messages</li>
+                    <?php $count=0  ?>
+                @foreach($unread_messages as $unread_message)
+                    <?php $count++  ?>
+
+                <li><a href="http://localhost/church/public/admin_church/{{$unread_message->id}}message"><span>{{$unread_message->email}}</span>
+                        <br>
+                        <span class="color-light">{{str_limit($unread_message->message,$limit=60,$end='...')}}</span>
+                        <div><i class="fa fa-clock-o"></i> {{$unread_message->created_at->diffForHumans()}}</div></a></li>
+                        @if ($count==3)
+                            @break
+                        @endif
+                @endforeach
+                @endif
+                <li class="text-center"><a href="http://localhost/church/public/admin_church/messages">View all messages</a></li>
             </ul>
         </div>
-        <button class="btn-transparent" id="notifications"><i class="fa fa-flag-o white-color"></i><span class="white-color bg-blue-dark">2</span></button>
+        <button class="btn-transparent" id="notifications" disabled><i class="fa fa-flag-o white-color"></i><span class="white-color bg-blue-dark">0</span></button>
         <div class="position-absolute notifications hidden">
             <ul>
                 <li class="text-bold">You have 2 new notifications</li>

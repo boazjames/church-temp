@@ -13,9 +13,9 @@
             @if($messages)
             @foreach($messages as $message)
             @if($message->is_read==0)
-                <div class="message-jumbotron text-bold"><div class="message-email inline">{{$message->email}}</div> <p class="inline">{{str_limit($message->message, $limit = 100, $end = '...')}}</p></div>
+                        <a href="http://localhost/church/public/admin_church/{{$message->id}}message"><div class="message-jumbotron text-bold"><div class="message-email inline">{{$message->email}}</div> <p class="inline">{{str_limit($message->message, $limit = 100, $end = '...')}}</p></div></a>
                     @else
-                        <div class="message-jumbotron-read text-bold"><div class="message-email inline">{{$message->email}}</div> <p class="inline">{{str_limit($message->message, $limit = 100, $end = '...')}}</p></div>
+                        <a href="http://localhost/church/public/admin_church/{{$message->id}}message"><div class="message-jumbotron-read text-bold"><div class="message-email inline">{{$message->email}}</div> <p class="inline">{{str_limit($message->message, $limit = 100, $end = '...')}}</p></div></a>
                 @endif
                 @endforeach
 

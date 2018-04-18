@@ -4,6 +4,12 @@
 var arr=['images/haley.jpg','images/jon.jpg','images/PB.jpg','images/inside.jpg']; //an array of image sources
 var pos=0; //initializes image position in the array
 $(document).ready(function () {
+    var loaderHtml='';
+    arr.forEach(function (src) {
+        loaderHtml+='<img src="'+src+'">';
+    });
+
+    $('.load-images').html(loaderHtml);
 
     var htm='';
     /* initializes the small circles html*/

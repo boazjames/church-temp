@@ -37,6 +37,9 @@
     <!-- image container -->
 <div id="slider"></div>
 
+    <!-- load images -->
+    <div class="load-images hidden"></div>
+
     <!-- next button -->
     <button id="next"><i class="fa fa-angle-double-right"></i></button>
 
@@ -62,6 +65,7 @@
 <!-- end of home -->
 
 <div class="set-time hidden">
+    <?php $times=$arr['times']; ?>
     @foreach($times as $time)
 
         <div>{{$time->time}}</div>
