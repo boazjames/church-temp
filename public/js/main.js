@@ -48,7 +48,7 @@ if(wScroll>1){
     $('#down').show();
 }
 
-        // Back To Top Appear
+        // Back To Top
         wScroll > 700 ? $('#back-to-top').fadeIn() : $('#back-to-top').fadeOut();
     });
 
@@ -66,6 +66,15 @@ if(wScroll>1){
             scrollTop: 0
         }, 600);
     });
+
+    $("#down").on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('#about').offset().top
+        }, 600);
+    });
+
+
 
 //add active class to vavigation
     $('body').scrollspy({ target: '#nav-inner' });

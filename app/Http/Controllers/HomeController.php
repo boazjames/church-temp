@@ -36,36 +36,31 @@ class HomeController extends Controller
         $sermon=new Sermon;
         $videos=new Video;
         $users=new User;
-        $unread_messages=Message::where('is_read','=','0')->latest()->get();
         $sermon_count=count($sermon->all());
         $videos_count=count($videos->all());
         $users_count=count($users->all());
         $count_array=['sermons'=>$sermon_count,'videos'=>$videos_count,'users'=>$users_count];
-        return view('admin.panel',compact('count_array'),compact('unread_messages'));
+        return view('admin.panel',compact('count_array' ));
     }
     public function sermon(){
-        $unread_messages=Message::where('is_read','=','0')->latest()->get();
         $sermons=Sermon::orderBy('id', 'desc')->paginate(5);
-        return view('admin.sermon-view',compact('sermons'),compact('unread_messages'));
+        return view('admin.sermon-view',compact('sermons'));
     }
 
     public function video(){
-        $unread_messages=Message::where('is_read','=','0')->latest()->get();
         $videos=Video::orderBy('id', 'desc')->paginate(5);
-        return view('admin.video-view',compact('videos'),compact('unread_messages'));
+        return view('admin.video-view',compact('videos'));
     }
 
 
     public function time(){
-        $unread_messages=Message::where('is_read','=','0')->latest()->get();
         $times=Time::limit(3)->latest()->get();
-        return view('admin.time-view',compact('times'),compact('unread_messages'));
+        return view('admin.time-view',compact('times'));
     }
 
     public function admin(){
-        $unread_messages=Message::where('is_read','=','0')->latest()->get();
         $admins=User::orderBy('id', 'desc')->paginate(5);
-        return view('admin.admin-view',compact('admins'),compact('unread_messages'));
+        return view('admin.admin-view',compact('admins'));
     }
 
     public function storeVideo(){
@@ -95,12 +90,11 @@ class HomeController extends Controller
     }
 
     public function videoValue($id){
-        $unread_messages=Message::where('is_read','=','0')->latest()->get();
         $video=new Video;
 
         $video=$video->find($id);
 
-        return view('admin.edit-video',compact('video'),compact('unread_messages'));
+        return view('admin.edit-video',compact('video'));
 
     }
 
@@ -149,12 +143,11 @@ class HomeController extends Controller
     }
 
     public function timeValue($id){
-        $unread_messages=Message::where('is_read','=','0')->latest()->get();
         $time=new Time;
 
         $time=$time->find($id);
 
-        return view('admin.edit-time',compact('time'),compact($unread_messages));
+        return view('admin.edit-time',compact('time'));
 
     }
 
@@ -217,7 +210,6 @@ class HomeController extends Controller
     }
 
     public function filtAdmin(){
-        $unread_messages=Message::where('is_read','=','0')->latest()->get();
         $user=new User;
         $this->validate(request(),[
             'username'=>'required'
@@ -227,15 +219,14 @@ class HomeController extends Controller
 
         $admins=$user->where('username','like','%'.$username.'%')->paginate(5);
 
-        return view('admin.admin-view',compact('admins'),compact('unread_messages'));
+        return view('admin.admin-view',compact('admins'));
     }
 
     public function adminDetails(){
-        $unread_messages=Message::where('is_read','=','0')->latest()->get();
         $user=new User;
         $id=auth()->id();
         $user=$user->find($id);
-        return view('admin.edit-profile',compact('user'),compact('unread_messages'));
+        return view('admin.edit-profile',compact('user'));
     }
 
     public function editAdmin(){

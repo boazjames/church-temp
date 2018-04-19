@@ -188,8 +188,17 @@ var alert=$('.alert');
         location.href='http://localhost/church/public/admin_church/edit-profile';
     });
 
-    // file upload
+    $('.all-messages').on('click',function (e) {
+       e.preventDefault();
+       location.href='http://localhost/church/public/admin_church/messages';
+    });
+    $('.single-message').on('click',function (e) {
+       e.preventDefault();
+       var id=$(this).attr('data-id');
+       location.href='http://localhost/church/public/admin_church/'+id+'message';
+    });
 
+    // file upload
 
     function verifyExtension(file_name,allowed_extension_array) {
         var extension=file_name.substr( (file_name.lastIndexOf('.') +1) );

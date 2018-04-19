@@ -47,8 +47,8 @@
     <div id="circles"></div>
 
     <!-- scroll down -->
-    <div class="text-center hidden-xs">
-        <a href="#about"><button class="animated bounce infinite" id="down"><i class="fa fa-angle-double-down"></i></button></a>
+    <div class="hidden-xs">
+        <a href="#about"><button class="animated bounce infinite" id="down"><i class="fa fa-angle-double-down black-color"></i></button></a>
     </div>
 
 </div>

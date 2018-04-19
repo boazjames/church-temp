@@ -34,31 +34,27 @@ class MessageController extends Controller
     }
 
     public function index(){
-        $unread_messages=Message::where('is_read','=','0')->latest()->get();
         $message=new Message;
         $messages=$message->orderBy('is_read','asc')->latest()->paginate(7);
-        return view('admin.messages',compact('messages'),compact('unread_messages'));
+        return view('admin.messages',compact('messages'));
     }
 
     public function showUnread(){
-        $unread_messages=Message::where('is_read','=','0')->latest()->get();
         $message=new Message;
         $messages=$message->where('is_read','=','0')->latest()->paginate(7);
-        return view('admin.messages',compact('messages'),compact('unread_messages'));
+        return view('admin.messages',compact('messages'));
     }
 
     public function showRead(){
-        $unread_messages=Message::where('is_read','=','0')->latest()->get();
         $message=new Message;
         $messages=$message->where('is_read','=','1')->latest()->paginate(7);
-        return view('admin.messages',compact('messages'),compact('unread_messages'));
+        return view('admin.messages',compact('messages'));
     }
 
     public function showMessage($id){
-        $unread_messages=Message::where('is_read','=','0')->latest()->get();
         $message=new Message;
         $message=$message->find($id);
-        return view('admin.message',compact('message'),compact('unread_messages'));
+        return view('admin.message',compact('message'));
     }
 
     public function sendMessage(){

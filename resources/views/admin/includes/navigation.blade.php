@@ -16,7 +16,7 @@
                 @foreach($unread_messages as $unread_message)
                     <?php $count++  ?>
 
-                <li><a href="http://localhost/church/public/admin_church/{{$unread_message->id}}message"><span>{{$unread_message->email}}</span>
+                <li class="single-message" data-id="{{$unread_message->id}}"><a><span>{{$unread_message->email}}</span>
                         <br>
                         <span class="color-light">{{str_limit($unread_message->message,$limit=60,$end='...')}}</span>
                         <div><i class="fa fa-clock-o"></i> {{$unread_message->created_at->diffForHumans()}}</div></a></li>
@@ -25,7 +25,7 @@
                         @endif
                 @endforeach
                 @endif
-                <li class="text-center"><a href="http://localhost/church/public/admin_church/messages">View all messages</a></li>
+                <li class="text-center all-messages"><a>View all messages</a></li>
             </ul>
         </div>
         <button class="btn-transparent" id="notifications" disabled><i class="fa fa-flag-o white-color"></i><span class="white-color bg-blue-dark">0</span></button>

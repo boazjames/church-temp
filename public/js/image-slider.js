@@ -4,6 +4,7 @@
 var arr=['images/haley.jpg','images/jon.jpg','images/PB.jpg','images/inside.jpg']; //an array of image sources
 var pos=0; //initializes image position in the array
 $(document).ready(function () {
+    var interval=5000;
     var loaderHtml='';
     arr.forEach(function (src) {
         loaderHtml+='<img src="'+src+'">';
@@ -19,17 +20,21 @@ $(document).ready(function () {
     }
 
     $('#circles').html(htm);//show small circles
-    $('#slider').html('<img src="'+arr[0]+'" class="img-slide wow slideInDown" data-wow-delay="0.8s">');//show first image
+    $('#slider').html('<img src="'+arr[0]+'" class="img-slide image-animated"">');//show first image
     $('#0').css({'background':'#000', 'color':'#000'});//sets the background of the first small circle to black
+
 
     /* Auto slides the images with the image sources array given as first argument and interval as second argument */
     function autoSlide(arr,interval){
+
         setInterval(function () {
+            $('.img-slide').css({'opacity':'.1 !important'});
             pos++;
             if(pos>arr.length-1){
                 pos=0;
             }
-            $('#slider').html('<img src="'+arr[pos]+'" class="img-slide wow fadeIn">');//shows image
+
+            $('#slider').html('<img src="'+arr[pos]+'" class="img-slide img'+pos+' image-animated">');//shows image
             $('#'+pos).css({'background':'#000', 'color':'#000'});//sets background-color of circle representing the current active image to black
             $('#'+(pos-1)).css({'background':'#fff', 'color':'#fff'});//sets background-color of circle before active to white
             if(pos==0){
@@ -40,14 +45,14 @@ $(document).ready(function () {
     }
     /* end of function autoSlide */
 
-    autoSlide(arr,5000);//calls function autoSlide
+    autoSlide(arr,interval);//calls function autoSlide
 
     /* displays next image */
     function next(){
         if(pos>arr.length-2){
             pos=-1;
         }
-        $('#slider').html('<img src="'+arr[pos+1]+'" class="img-slide wow fadeIn">');//show image
+        $('#slider').html('<img src="'+arr[pos+1]+'" class="img-slide image-animated">');//show image
         pos++;
 
         $('#'+pos).css({'background':'#000', 'color':'#000'});//sets background-color of circle representing the current active image to black
@@ -63,7 +68,7 @@ $(document).ready(function () {
         if(pos<1){
             pos=arr.length;
         }
-        $('#slider').html('<img src="'+arr[pos-1]+'" class="img-slide wow fadeIn">');
+        $('#slider').html('<img src="'+arr[pos-1]+'" class="img-slide image-animated">');
         pos--;
 
         $('#'+pos).css({'background':'#000', 'color':'#000'});//sets background-color of circle representing the current active image to black
@@ -93,7 +98,7 @@ $(document).ready(function () {
 /* displays image represented by the small circle */
 function circleClick(position) {
     if(position!=pos){
-        $('#slider').html('<img src="'+arr[position]+'" class="img-slide wow fadeIn">');//show image
+        $('#slider').html('<img src="'+arr[position]+'" class="img-slide image-animated">');//show image
 
         $('#'+position).css({'background':'#000', 'color':'#000'});//sets background-color of circle representing the current active image to black
         $('#'+(pos)).css({'background':'#fff', 'color':'#fff'});//sets background-color of circle before active to white
