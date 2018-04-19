@@ -27,6 +27,10 @@ Route::get('admin_church/logout','SessionsController@logout');
 
 Auth::routes();
 
+Route::get('admin_church/reset-password-email','PasswordController@email');
+
+Route::get('admin_church/reset-password','PasswordController@reset');
+
 Route::post('login','SessionsController@login');
 
 Route::post('admin_church/video','HomeController@storeVideo');
@@ -89,5 +93,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin_church/{id}message', 'MessageController@showMessage');
 
     Route::post('admin_church/send-message', 'MessageController@sendMessage');
+
+
+    Route::get('admin_church/change-password','PasswordController@change');
+
+    Route::post('admin_church/change-password','PasswordController@changePassword');
 
 });

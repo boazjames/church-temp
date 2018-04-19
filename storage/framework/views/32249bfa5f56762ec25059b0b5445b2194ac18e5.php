@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default nav navbar-fixed-top bg-blue" id="main-nav">
     <div class="inline quick-links float-right">
         <i class="fa fa-gears"></i> <span class="text-bold">ADMIN</span>
-        <button class="btn-transparent" id="messages"><i class="fa fa-envelope-o white-color"></i>
+        <button class="btn-transparent" id="messages" data-toggle="tooltip" title="Messages"><i class="fa fa-envelope-o white-color"></i>
             <?php if(count($unread_messages)<4): ?>
             <span class="white-color bg-blue-dark"><?php echo e(count($unread_messages)); ?></span>
                 <?php else: ?>
@@ -43,17 +43,18 @@
 <!-- side navigation -->
 <nav class="navbar float-left side-nav bg-white col-lg-3 col-md-3 col-sm-12 col-xs-12 inline" id="nav-collapsed">
     <ul>
-        <li class="item1"><h5 class="text-bold white-color">Christian Church</h5><button class="toggle-lg float-right" action="show"><span class="fa fa-bars white-color"></span></button></li>
+        <li class="item1"><h5 class="text-bold white-color">Christian Church</h5><button class="toggle-lg float-right" action="show" data-toggle="tooltip" title="collapse"><span class="fa fa-bars white-color"></span></button></li>
         <li class="bg-white text-center">
             <?php if(Auth::user()->image): ?>
-            <img src="../storage/user-images/<?php echo e(Auth::user()->image); ?>" class="user-img img-circle">
+            <img src="../storage/user-images/<?php echo e(Auth::user()->image); ?>" class="user-img img-circle" data-toggle="tooltip" title="change profile photo">
             <?php else: ?>
-                <img src="../users-img/user.jpg" class="user-img img-circle">
+                <img src="../users-img/user.jpg" class="user-img img-circle" data-toggle="tooltip" title="change profile photo">
                 <?php endif; ?>
             <h6 class="text-bold"><?php echo e(Auth::user()->salutation); ?> <?php echo e(Auth::user()->username); ?></h6>
             <div class="text-center">
-                </a> <button class="btn-transparent" id="settings"><i class="fa fa-cog blue-color"></i></button>
-                <a href="logout"><button class="btn-transparent" id="sign-out"><i class="fa fa-sign-out blue-color"></i></button></a>
+                <a href="edit-profile"><button class="btn-transparent" id="settings" data-toggle="tooltip" title="edit profile"><i class="fa fa-cog blue-color"></i></button></a>
+                <a href="change-password"><button class="btn-transparent" id="settings" data-toggle="tooltip" title="change password"><i class="fa fa-key blue-color"></i></button></a>
+                <a href="logout"><button class="btn-transparent" id="sign-out" data-toggle="tooltip" title="logout"><i class="fa fa-sign-out blue-color"></i></button></a>
             </div>
         </li>
         <li class="overview-link item"><a class="white-color"><button class="btn-transparent"><i class="fa fa-cogs white-color"></i></button>Dashboard</a></li>
@@ -94,7 +95,7 @@
 <!-- side navigation small -->
 <nav class="navbar float-left side-nav bg-white col-lg-3 col-md-3 col-sm-12 col-xs-12 inline" id="nav-collapsed-sm">
     <ul>
-        <li class="item1-sm"><button class="toggle" action="show"><span class="fa fa-bars white-color"></span></button></li>
+        <li class="item1-sm"><button class="toggle" action="show" data-toggle="tooltip" title="expand"><span class="fa fa-bars white-color"></span></button></li>
         <li class="bg-white text-center">
             <?php if(Auth::user()->image): ?>
             <img src="../storage/user-images/<?php echo e(Auth::user()->image); ?>" class="user-img-sm img-circle">
@@ -102,7 +103,7 @@
                 <img src="../storage/user-images/user.jpg" class="user-img-sm img-circle">
             <?php endif; ?>
         </li>
-        <li class="overview-link item"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-cogs white-color"></i></button></a></li>
+        <li class="overview-link item" data-toggle="tooltip" title="dashboard"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-cogs white-color"></i></button></a></li>
         <li class="item"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-book white-color"></i></button></a>
             <ul class="position-absolute hidden">
                 <li class="view-sermon"><a href="" class="white-color"><button class="btn-transparent"><i class="fa fa-edit white-color"></i></button>View Sermon</a></li>

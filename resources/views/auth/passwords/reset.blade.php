@@ -1,7 +1,48 @@
-@extends('layouts.app')
+@extends('admin.layouts.resets')
 
 @section('content')
-<div class="container">
+
+    <div class="panel-heading bg-blue-dark text-bold white-color" id="form-top">Reset Password</div>
+
+    <form class="login-form"  method="POST" action="{{ route('password.request') }}">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+
+        <?php $token=$_GET['token']; ?>
+
+        {{csrf_field()}}
+            <input type="hidden" name="token" value="{{ $token }}">
+
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email"  name="email" class="form-control" placeholder="example@gmail.com" required autofocus>
+
+        </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password"  name="password" class="form-control" placeholder="password" required autofocus>
+
+            </div>
+            <div class="form-group">
+                <label>Confirm Password:</label>
+                <input type="password"  name="password_confirmation" class="form-control" placeholder="confirm password" required autofocus>
+
+            </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary bg-blue-dark">Reset Password</button>
+        </div>
+
+
+        @include('layouts.errors')
+
+    </form>
+
+
+{{--<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -67,5 +108,5 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}}
 @endsection

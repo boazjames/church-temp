@@ -15,9 +15,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
         view()->composer('admin.includes.navigation',function ($view){
             $view->with('unread_messages',\App\Message::message());
         });
+
     }
 
     /**
@@ -27,6 +29,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+//
     }
 }

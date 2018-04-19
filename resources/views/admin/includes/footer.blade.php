@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="text-center white-color padding-5p">
-                    &COPY; <?php echo date('Y'); ?> Christian Church
+                    &COPY; <?php echo date('Y'); ?> {{config('app.name')}}
                 </div>
             </div>
         </div>

@@ -55,7 +55,7 @@
                 <button type="submit" class="btn btn-primary bg-blue-dark">Login</button>
             </div>
             <div class="form-group">
-                <a href="">Forgot Password?</a>
+                <a href="http://localhost/church/public/admin_church/reset-password-email">Forgot Password?</a>
             </div>
 
             <?php echo $__env->make('layouts.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>;

@@ -1,49 +1,32 @@
 <?php $__env->startSection('content'); ?>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header"><?php echo e(__('Reset Password')); ?></div>
+    <div class="panel-heading bg-blue-dark text-bold white-color" id="form-top">Reset Password</div>
 
-                <div class="card-body">
-                    <?php if(session('status')): ?>
-                        <div class="alert alert-success">
-                            <?php echo e(session('status')); ?>
+    <form class="login-form"  method="POST" action="<?php echo e(route('password.email')); ?>">
+        <?php if(session('status')): ?>
+            <div class="alert alert-success">
+                <?php echo e(session('status')); ?>
 
-                        </div>
-                    <?php endif; ?>
-
-                    <form method="POST" action="<?php echo e(route('password.email')); ?>">
-                        <?php echo csrf_field(); ?>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right"><?php echo e(__('E-Mail Address')); ?></label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control<?php echo e($errors->has('email') ? ' is-invalid' : ''); ?>" name="email" value="<?php echo e(old('email')); ?>" required>
-
-                                <?php if($errors->has('email')): ?>
-                                    <span class="invalid-feedback">
-                                        <strong><?php echo e($errors->first('email')); ?></strong>
-                                    </span>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <?php echo e(__('Send Password Reset Link')); ?>
-
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
+        <?php endif; ?>
+
+        <?php echo e(csrf_field()); ?>
+
+
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email"  name="email" class="form-control" placeholder="example@gmail.com" required autofocus>
+
         </div>
-    </div>
-</div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary bg-blue-dark">Send password reset link</button>
+        </div>
+
+
+        <?php echo $__env->make('layouts.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    </form>
+
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('admin.layouts.resets', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

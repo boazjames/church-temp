@@ -82,6 +82,13 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.alert-custom{
+    color: #a94442 !important;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: 5px;
+    margin: 0 30px 30px 30px;
+}
 
 #add-sermon .modal-dialog{
     width: 1000px !important;
