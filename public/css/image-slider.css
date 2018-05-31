@@ -33,11 +33,11 @@
     font-size: 60px !important;
 }
 .circle{
-    border: #000 1px solid;
+    border: #ccc 3px solid;
     width: 20px;
     height: 20px;
     border-radius: 20px;
-    background: #fff;
+    background: transparent;
     display: inline-block;
     cursor: pointer;
 }
@@ -45,7 +45,7 @@
     margin-top: -15vh;
     margin-left: 48.6%;
     position: absolute;
-    z-index: 9999;
+    z-index: 9000;
 }
 .image-animated{
     animation: animateImage 5s ease-in-out;

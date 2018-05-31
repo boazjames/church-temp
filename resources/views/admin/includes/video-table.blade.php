@@ -1,6 +1,7 @@
 <div class="video dynamic">
     <div class="panel bg-white">
         <div class="panel-heading white-color text-bold bg-blue-dark">Videos</div>
+        @include('admin.includes.flash-messages')
 
         <table id="video-tbl" class="table-striped table-responsive">
             <tr>

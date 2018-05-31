@@ -110,7 +110,7 @@ $(document).ready(function () {
 
 
 
-    $('#add-sermon-form').on('submit',function (e) {
+    /*$('#add-sermon-form').on('submit',function (e) {
         e.preventDefault();
         var inputVal=$('#image').val();
         if(inputVal==''){
@@ -121,7 +121,7 @@ $(document).ready(function () {
             ajaxRequestFile('post',form_data,form,'#add-sermon','Sermon added successfully.');
 
         }
-    });
+    });*/
 
     $('#add-video-form').on('submit',function (e) {
         e.preventDefault();

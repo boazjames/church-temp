@@ -5,7 +5,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="http://localhost/church/public" class="navbar-brand"><img src="images/church-logo.png" id="logo" alt="loading" class="img-responsive"></a>
+        <a href="http://localhost/church/public" class="navbar-brand"><img src="http://localhost/church/public/images/church-logo.png" id="logo" alt="logo" class="img-responsive"></a>
     </div>
     <div class="navbar-collapse collapse nav" id="nav-inner">
 
@@ -19,7 +19,14 @@
                     <li><a class="dropdown-item" href="http://localhost/church/public/#googleMap">Location</a></li>
                 </ul>
             </li>
-            <li><a href="index.php#watch">Watch</a></li>
+            <li class="dropdown" id="dropdown" action="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">Videos<i class="caret"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                    <li><a class="dropdown-item" href="http://localhost/church/public/#watch">Latest Videos</a></li>
+                    <li><a class="dropdown-item" href="videos">All Videos</a></li>
+                </ul>
+            </li>
             <li class="dropdown" id="dropdown" action="dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sermon<i class="caret"></i></a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown01">

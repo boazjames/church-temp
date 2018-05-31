@@ -1,6 +1,7 @@
 <div class="time dynamic">
     <div class="panel bg-white text-center">
         <div class="panel-heading white-color text-bold bg-blue-dark">Time</div>
+        @include('admin.includes.flash-messages')
         <h2 class="sub-heading">Next service starts in: </h2>
         <div class="set-time hidden">
         @foreach($times as $time)

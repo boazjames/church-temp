@@ -1,5 +1,5 @@
-<footer id="footer" class="sm-padding bg-dark">
-    <div class="container-fluid">
+<footer id="footer" class="bg-dark">
+    <div class="container">
         <div class="row">
                 <h2 class="title text-center white-color">Find Us</h2>
             <div class="col-md-12">
@@ -22,7 +22,7 @@
 </div>
 
 <!-- back to top -->
-<button id="back-to-top" class="animated bounce infinite"><i class="fa fa-angle-double-up blue-color"></i></button>
+<button id="back-to-top"><i class="fa fa-angle-double-up blue-color"></i></button>
 
 <!--jquery javascript library -->
 <script src="js/jquery.min.js"></script>

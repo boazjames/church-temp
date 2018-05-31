@@ -1,6 +1,7 @@
 <div class="time dynamic">
     <div class="panel bg-white text-center">
         <div class="panel-heading white-color text-bold bg-blue-dark">Time</div>
+        <?php echo $__env->make('admin.includes.flash-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         <h2 class="sub-heading">Next service starts in: </h2>
         <div class="set-time hidden">
         <?php $__currentLoopData = $times; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $time): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

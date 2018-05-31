@@ -71,7 +71,7 @@
             </div>
             <div class="col-md-9">
                 <h3 class="text-bold"><?php echo e($sermon->title); ?></h3>
-                <p class="all-sermon-paragraph"><?php echo e($sermon->body); ?></p>
+                <p class="all-sermon-paragraph"><?php echo $sermon->body; ?></p>
 
             </div>
         </div>

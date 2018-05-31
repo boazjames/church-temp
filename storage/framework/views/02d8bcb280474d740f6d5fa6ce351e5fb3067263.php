@@ -68,6 +68,9 @@
 <!-- clock -->
 <script src="../adm/js/clock.js"></script>
 
+<!-- ckeditor -->
+<script type="text/javascript" src="http://localhost/church/public/ckeditor/ckeditor.js"></script>
+
 <!-- main script -->
 <script src="../adm/js/main.js"></script>
 

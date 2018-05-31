@@ -15,6 +15,12 @@ Route::get('/','SermonController@limit3');
 
 Route::get('sermons','SermonController@index');
 
+Route::get('videos','VideoController@index');
+
+Route::get('videos/{id}','VideoController@single');
+
+Route::post('videos','VideoController@search');
+
 Route::post('search','SermonController@search');
 
 Route::get('{id}sermon','SermonController@show');
@@ -78,6 +84,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('admin_church/delete-sermon','SermonController@delete');
 
     Route::get('admin_church/{id}edit-sermon','SermonController@value');
+
+    Route::get('admin_church/add-sermon','SermonController@addSermon');
 
     Route::post('admin_church/edit-sermon','SermonController@edit');
 

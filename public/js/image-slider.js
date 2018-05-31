@@ -21,7 +21,7 @@ $(document).ready(function () {
 
     $('#circles').html(htm);//show small circles
     $('#slider').html('<img src="'+arr[0]+'" class="img-slide image-animated"">');//show first image
-    $('#0').css({'background':'#000', 'color':'#000'});//sets the background of the first small circle to black
+    $('#0').css({'background':'#fff', 'color':'#fff'});//sets the background of the first small circle to black
 
 
     /* Auto slides the images with the image sources array given as first argument and interval as second argument */
@@ -35,10 +35,10 @@ $(document).ready(function () {
             }
 
             $('#slider').html('<img src="'+arr[pos]+'" class="img-slide img'+pos+' image-animated">');//shows image
-            $('#'+pos).css({'background':'#000', 'color':'#000'});//sets background-color of circle representing the current active image to black
-            $('#'+(pos-1)).css({'background':'#fff', 'color':'#fff'});//sets background-color of circle before active to white
+            $('#'+pos).css({'background':'#fff', 'color':'#fff'});//sets background-color of circle representing the current active image to black
+            $('#'+(pos-1)).css({'background':'transparent', 'color':'transparent'});//sets background-color of circle before active to white
             if(pos==0){
-                $('#'+(arr.length-1)).css({'background':'#fff', 'color':'#fff'});
+                $('#'+(arr.length-1)).css({'background':'transparent', 'color':'transparent'});
             }
 
         },interval);
@@ -55,10 +55,10 @@ $(document).ready(function () {
         $('#slider').html('<img src="'+arr[pos+1]+'" class="img-slide image-animated">');//show image
         pos++;
 
-        $('#'+pos).css({'background':'#000', 'color':'#000'});//sets background-color of circle representing the current active image to black
-        $('#'+(pos-1)).css({'background':'#fff', 'color':'#fff'});//sets background-color of circle before active to white
+        $('#'+pos).css({'background':'#fff', 'color':'#fff'});//sets background-color of circle representing the current active image to black
+        $('#'+(pos-1)).css({'background':'transparent', 'color':'transparent'});//sets background-color of circle before active to white
         if(pos==0){
-            $('#'+(arr.length-1)).css({'background':'#fff', 'color':'#fff'});
+            $('#'+(arr.length-1)).css({'background':'transparent', 'color':'transparent'});
         }
     }
     /* end of function next  */
@@ -71,10 +71,10 @@ $(document).ready(function () {
         $('#slider').html('<img src="'+arr[pos-1]+'" class="img-slide image-animated">');
         pos--;
 
-        $('#'+pos).css({'background':'#000', 'color':'#000'});//sets background-color of circle representing the current active image to black
-        $('#'+(pos+1)).css({'background':'#fff', 'color':'#fff'});//sets background-color of circle before active to white
+        $('#'+pos).css({'background':'#fff', 'color':'#fff'});//sets background-color of circle representing the current active image to black
+        $('#'+(pos+1)).css({'background':'transparent', 'color':'transparent'});//sets background-color of circle before active to white
         if(pos==arr.length-1){
-            $('#0').css({'background':'#fff', 'color':'#fff'});
+            $('#0').css({'background':'transparent', 'color':'transparent'});
         }
     }
     /* end of function previous */
@@ -100,8 +100,8 @@ function circleClick(position) {
     if(position!=pos){
         $('#slider').html('<img src="'+arr[position]+'" class="img-slide image-animated">');//show image
 
-        $('#'+position).css({'background':'#000', 'color':'#000'});//sets background-color of circle representing the current active image to black
-        $('#'+(pos)).css({'background':'#fff', 'color':'#fff'});//sets background-color of circle before active to white
+        $('#'+position).css({'background':'#fff', 'color':'#fff'});//sets background-color of circle representing the current active image to black
+        $('#'+(pos)).css({'background':'transparent', 'color':'transparent'});//sets background-color of circle before active to white
 
         pos=position;
     }

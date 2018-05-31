@@ -1,4 +1,13 @@
 $(document).ready(function () {
+
+    $('iframe').attr("width","800");
+    $('iframe').attr("height","365");
+    var width=screen.availWidth;
+    if(width<=767){
+        $('iframe').attr("width","315");
+        $('iframe').attr("height","150");
+    }
+
     $('.nav li').on('click',function () {
         var actionType=$(this).attr('action');
         $('.nav li').removeClass('nav-active');

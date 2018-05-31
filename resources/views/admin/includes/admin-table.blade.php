@@ -1,6 +1,7 @@
 <div class="admin dynamic">
     <div class="panel bg-white">
         <div class="panel-heading white-color text-bold bg-blue-dark">Admin</div>
+        @include('admin.includes.flash-messages')
         <form method="post" action="filt-admin">
             {{csrf_field()}}
             <input type="text" class="form-control inline filt-form" name="username" placeholder="Filter Admin...">

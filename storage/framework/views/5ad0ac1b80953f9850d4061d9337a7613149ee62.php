@@ -76,7 +76,8 @@
                     </div>
                     <div class="col-md-9">
                         <h3 class="text-bold"><?php echo e($sermon->title); ?></h3>
-                        <p class="all-sermon-paragraph"><?php echo e(str_limit($sermon->body, $limit = 500, $end = '...')); ?></p>
+                        <?php echo str_limit($sermon->body, $limit = 300, $end = '...'); ?>
+
                         <div class="text-left">
                             <a href="http://localhost/church/public/<?php echo e($sermon->id); ?>sermon" class="white-color"><button class="btn btn-primary">Read More</button></a>
                         </div>

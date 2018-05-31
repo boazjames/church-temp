@@ -5,7 +5,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="http://localhost/church/public" class="navbar-brand"><img src="images/church-logo.png" id="logo" alt="loading" class="img-responsive"></a>
+        <a href="http://localhost/church/public" class="navbar-brand"><img src="images/church-logo.png" id="logo"
+                                                                           alt="loading" class="img-responsive"></a>
     </div>
     <div class="navbar-collapse collapse nav" id="nav-inner">
 
@@ -13,18 +14,27 @@
             <li><a href="http://localhost/church/public/">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li class="dropdown" id="dropdown" action="dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Must Know<i class="caret"></i></a>
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">Must Know<i class="caret"></i></a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown01">
                     <li><a class="dropdown-item" href="#service">Next Service</a></li>
                     <li><a class="dropdown-item" href="#googleMap">Location</a></li>
                 </ul>
             </li>
-            <li><a href="#watch">Watch</a></li>
             <li class="dropdown" id="dropdown" action="dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sermon<i class="caret"></i></a>
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">Videos<i class="caret"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                    <li><a class="dropdown-item" href="#watch">Latest Videos</a></li>
+                    <li><a class="dropdown-item" href="videos">All Videos</a></li>
+                </ul>
+            </li>
+            <li class="dropdown" id="dropdown" action="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">Sermon<i class="caret"></i></a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown01">
                     <li><a class="dropdown-item" href="#sermon">Latest Sermon</a></li>
-                    <li><a class="dropdown-item" href="sermons">All sermons</a></li>
+                    <li><a class="dropdown-item" href="sermons">All Sermons</a></li>
                 </ul>
             </li>
             <li><a href="#contact">Contact Us</a></li>

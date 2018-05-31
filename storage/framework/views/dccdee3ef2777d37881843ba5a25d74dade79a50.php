@@ -1,6 +1,7 @@
 <div class="sermon dynamic">
 <div class="panel bg-white">
     <div class="panel-heading white-color text-bold bg-blue-dark">Sermons</div>
+    <?php echo $__env->make('admin.includes.flash-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <form method="post" action="filt-sermon">
         <?php echo e(csrf_field()); ?>
 

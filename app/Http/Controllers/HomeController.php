@@ -116,7 +116,7 @@ class HomeController extends Controller
 
         $video->save();
 
-        return redirect('admin_church/video');
+        return redirect('admin_church/video')->with('success', 'video edited successfully');
     }
 
     public function setTime(){
@@ -167,7 +167,7 @@ class HomeController extends Controller
 
         $time->save();
 
-        return redirect('admin_church/time');
+        return redirect('admin_church/time')->with('success', 'time edited successfully');
     }
 
     public function addAdmin(){
@@ -246,7 +246,7 @@ class HomeController extends Controller
 
         $user->save();
 
-        return redirect('admin_church/home');
+        return redirect('admin_church/home')->with('success', 'admin edited successfully');
     }
 
     public function editPhoto(){
